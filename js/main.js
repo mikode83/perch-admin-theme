@@ -1,5 +1,6 @@
 $(document).ready(function(){
-    // function to see chekcbox status and add/remove relevant container classes
+
+    // checkbox status check and toggle
     function check_toggle(el) {
         if($(el).is(':checked')){
             $(el).closest('.checkbox-single').addClass('checked');
@@ -7,11 +8,22 @@ $(document).ready(function(){
             $(el).closest('.checkbox-single').removeClass('checked');
         }
     }
-    // watch for change in checkboxes
+
+    // check checkbox status on load
     $('input[type="checkbox"]').each(function(){
         check_toggle(this);
-        $(this).on('change', function(){
-            check_toggle(this);
-        });
     });
+
+    // watch for change in all and future (dom creation) checkboxes
+    $(document).delegate('input[type="checkbox"]', 'change', function(){
+        check_toggle(this);
+    });
+
+    $('.form-entry').each(function(){
+        var count = $(this).children('select').length;
+        if (count > 1) {
+            $(this).children('select').addClass('auto-width');
+        }
+    });
+
 });
