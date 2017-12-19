@@ -1,0 +1,321 @@
+// cahnage these to suit your preferance or brand.
+$primary-colour: #4285f4;
+$secondary-colour: #0f9d58;
+$tertiary-colour: #ef6c00;
+
+$light-colour: #FFFFFF;
+
+body,html {
+    font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    padding-top:52px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f2f2f2;
+}
+
+header{
+    &.topbar{
+        position: fixed;
+        top:0;
+        left:0;
+        width: 100%;
+    }
+}
+
+select {
+    padding:5px 40px 5px 10px;
+    width: 40%;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid $primary-colour;
+    border-left: none;
+    background-color: $light-colour;
+    outline: none;
+    border-radius: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url(select.png);
+    background-repeat:no-repeat;
+    background-position: right center;
+
+    &#perch_postDateTime_day,
+    &#perch_postDateTime_month,
+    &#perch_postDateTime_year,
+    &#perch_postDateTime_hour,
+    &#perch_postDateTime_minute,
+    &#postStatus {
+        width: auto;
+    }
+}
+
+h2.divider,
+.divider.ui-sortable-handle {
+    padding: 10px;
+    background-color: $primary-colour;
+    color: $light-colour;
+}
+
+.primary,
+a.primary:link,
+.js .divider div,
+a.primary:visited,
+.repeater-heading,
+form-simple label,
+.form-simple .fieldset-inner .legend-wrap {
+    font-weight: 400;
+}
+
+.js .divider div {
+    font-size: 1.15rem;
+}
+
+.repeater {
+    margin-left: 60px;
+    border-bottom: 1px solid #ccc;
+}
+
+.title-panel .button,
+.button.to-the-top,
+.title-panel .button.button-icon {
+    background-color: $primary-colour;
+    color: $light-colour;
+}
+
+.button.button-small {
+    border-radius: 0;
+    padding: 6px;
+    font-size: inherit;
+}
+
+.divider-toggle,
+.button.to-the-top.button-icon,
+.title-panel .button.button-icon {
+    svg {
+        fill: $light-colour;
+    }
+}
+
+table a.create-subitem {
+    color: $primary-colour;
+}
+
+input[type=text],
+textarea,
+.input-simple {
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.repeater-footer,
+.block-add-bar {
+    a {
+        padding: 10px !important;
+        background-color: $primary-colour !important;
+        color: $light-colour !important;
+        margin-right:4px;
+        margin-bottom:4px;
+        border-radius: 0 !important;
+        outline: none;
+        &:hover {
+            padding: 10px !important;
+            background-color: $primary-colour !important;
+            color: $light-colour !important;
+            margin-right:4px;
+            margin-bottom:4px;
+            border-radius: 0 !important;
+            outline: none;
+        }
+    }
+}
+
+.blocks{
+    border-top: 1px dotted $primary-colour;
+    border-bottom: 1px dotted $primary-colour;
+    &:before {
+        color:  $primary-colour;
+    }
+}
+
+.submit-bar-actions {
+    .button {
+        &.button-simple {
+            &#btnSubmit,
+            &#btnsubmit {
+                border-bottom-color: $secondary-colour !important;
+            }
+            &#add_another {
+                border-bottom-color: $primary-colour;
+            }
+        }
+    }
+}
+
+.block-wrap:hover .block-add-bar,
+.block-add-bar:hover {
+    a {
+        color: $light-colour !important;
+    }
+}
+
+.repeater-footer .repeater-add-prompt,
+.block-add-bar .block-add-prompt {
+    svg {
+        width: 40px;
+        height: 40px;
+        fill:  $primary-colour;
+    }
+}
+
+.repeated-item {
+    border:2px solid $primary-colour;
+    margin-bottom: 30px;
+
+    .index,
+    .index:hover,
+    &:hover .index {
+        background-color: $primary-colour;
+        color: $light-colour;
+    }
+
+    h2.divder {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 20px;
+        background-color: #ddd;
+        box-shadow: inset 7px 0 9px -7px rgba(0,0,0,0.4);
+    }
+
+    &:after{
+        border-color: $primary-colour;
+        border-width: 2px;
+    }
+}
+
+.radio-pair,
+.checkbox-single {
+    position: relative;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        filter: alpha(opacity=0);
+
+        + label {
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        &:checked {
+            + label {
+                &:after {
+                    width: 6px;
+                    height: 6px;
+                    background-color: $light-colour;
+                    border-radius: 5px;
+                    content: '';
+                    position: absolute;
+                    top: 14px;
+                    left: 33px;
+                }
+            }
+        }
+        .radio-pair & {
+            &:checked {
+                +label {
+                    &:before {
+                        background-color: $secondary-colour;
+                    }
+                }
+            }
+        }
+    }
+
+    label {
+        &:before {
+            content: '';
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: text-top;
+            width: 20px;
+            height: 20px;
+            background: #ddd;
+            .radio-pair & {
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                border-radius: 10px;
+            }
+        }
+    }
+    &.checked {
+        label {
+            &:before {
+                background-color: $secondary-colour;
+            }
+        }
+    }
+}
+
+
+
+.checkbox-single {
+    position: relative;
+
+    &.checked {
+         // background-color: $secondary-colour;
+
+         label {
+
+             &:after {
+                   content: '';
+                   position: absolute;
+                   background-color: $secondary-colour;
+                   left: 17px;
+                   top: 9px;
+                   background: $light-colour;
+                   width: 2px;
+                   height: 2px;
+                   -webkit-transform: rotate(45deg);
+                   transform: rotate(45deg);
+                   box-shadow: 2px 0 0 $light-colour,
+                       4px 0 0 $light-colour,
+                        4px -2px 0 $light-colour,
+                        4px -4px 0 $light-colour,
+                        4px -6px 0 $light-colour,
+                        4px -8px 0 $light-colour;
+             }
+
+            &.save-as-draft{
+                &:before {
+                    background-color: $tertiary-colour;
+                }
+                &:after {
+                    top: 16px;
+                }
+            }
+         }
+
+         &.field-wrap {
+             label:after {
+                top: 16px;
+                left: 53px;
+             }
+         }
+    }
+}
+
+.checkbox-group {
+    .checkbox-single{
+        &.checked {
+            label:after {
+                left: 14px;
+                top: 11px;
+            }
+        }
+    }
+}
